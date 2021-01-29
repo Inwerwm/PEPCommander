@@ -59,7 +59,7 @@
     <Compile Include="FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommandResourceElements.cs" />
+    <Compile Include="CommandResource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

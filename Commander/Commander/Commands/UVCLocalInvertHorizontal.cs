@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Commands
 {
-    class UVCLocalInvertHorizontal
+    class UVCLocalInvertHorizontal : ICommand
     {
         public int ID => 2;
 
@@ -16,6 +16,8 @@ namespace PEPCommander.Commands
         public string Description => "選択頂点のUVを選択範囲の局所領域基準で鏡像反転する";
 
         IEnumerable<IPXVertex> TargetVertices { get; }
+
+        public IEnumerable<CommandResource> RequireResources => new CommandResource[] { CommandResource.Vertex };
 
         public UVCLocalInvertHorizontal(IEnumerable<IPXVertex> targetVertices)
         {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UVCommand
+namespace PEPCommander
 {
-    enum CommandResourceElements
+    public enum CommandResource
     {
         Vertex
     }

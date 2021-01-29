@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Commands
 {
-    public interface IUVCommand
+    public interface ICommand
     {
         int ID { get; }
         /// <summary>
@@ -17,6 +17,10 @@ namespace PEPCommander.Commands
         /// 説明
         /// </summary>
         string Description { get; }
+        /// <summary>
+        /// 必要な要素
+        /// </summary>
+        IEnumerable<CommandResource> RequireResources { get; }
         /// <summary>
         /// 実行
         /// </summary>

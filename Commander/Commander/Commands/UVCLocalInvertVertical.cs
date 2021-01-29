@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Commands
 {
-    class UVCLocalInvertVertical : IUVCommand
+    class UVCLocalInvertVertical : ICommand
     {
         public int ID => 1;
 
@@ -17,6 +17,8 @@ namespace PEPCommander.Commands
         public string Description => "選択頂点のUVを選択範囲の局所領域基準で垂直反転する";
 
         IEnumerable<IPXVertex> TargetVertices { get; }
+
+        public IEnumerable<CommandResource> RequireResources => new CommandResource[] { CommandResource.Vertex };
 
         public UVCLocalInvertVertical(IEnumerable<IPXVertex> targetVertices)
         {
