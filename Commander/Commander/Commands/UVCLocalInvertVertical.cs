@@ -42,5 +42,7 @@ namespace PEPCommander.Commands
         {
             return Name;
         }
+
+        public object Clone() => new UVCLocalInvertVertical() { TargetVertices = this.TargetVertices };
     }
 }

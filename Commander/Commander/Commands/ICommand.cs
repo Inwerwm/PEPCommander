@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Commands
 {
-    public interface ICommand
+    public interface ICommand : ICloneable
     {
         int ID { get; }
         /// <summary>
