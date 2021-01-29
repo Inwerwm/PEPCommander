@@ -21,6 +21,7 @@ namespace PEPCommander
         public FormControl(IPERunArgs args)
         {
             Args = args;
+            listBoxCommands.Items.AddRange(CommandManager.List.ToArray());
 
             InitializeComponent();
             Reload();
