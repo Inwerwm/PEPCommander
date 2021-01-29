@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UVCommand
+namespace PEPCommander
 {
-    public class UVCommand : IPEPlugin
+    public class PEPCommander : IPEPlugin
     {
         private bool disposedValue;
 
-        public string Name => "UVCommand";
+        public string Name => "定形実行";
 
         public string Version => "1.0";
 
-        public string Description => "UVCommand";
+        public string Description => "コマンドを組み合わせた定形動作を実行する";
 
         public IPEPluginOption Option => new PEPluginOption(false, true);
 

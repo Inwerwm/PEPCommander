@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\IUVCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\UVCLocalInvertHorizontal.cs" />
     <Compile Include="Commands\UVCLocalInvertVertical.cs" />
     <Compile Include="PluginMain.cs" />
@@ -59,7 +59,13 @@
     <Compile Include="FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommandResourceElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

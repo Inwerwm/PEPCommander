@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UVCommand.Commands
+namespace PEPCommander.Commands
 {
     class UVCLocalInvertHorizontal
     {
         IEnumerable<IPXVertex> TargetVertices { get; }
 
-        public string Name => "局所鏡像反転";
+        public string Name => "UV局所鏡像反転";
 
         public string Description => "選択頂点のUVを選択範囲の局所領域基準で鏡像反転する";
 
