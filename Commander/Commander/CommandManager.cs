@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PEPCommander
 {
-    public class CommandManager
+    public static class CommandManager
     {
-        public IReadOnlyList<ICommand> List => new ICommand[]
+        public static IReadOnlyList<ICommand> List => new ICommand[]
         {
             new UVCLocalInvertVertical(),
             new UVCLocalInvertHorizontal()
