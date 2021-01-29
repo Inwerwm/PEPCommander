@@ -37,7 +37,7 @@ namespace PEPCommander
             this.listBoxRequires = new System.Windows.Forms.ListBox();
             this.labelRequire = new System.Windows.Forms.Label();
             this.buttonRun = new System.Windows.Forms.Button();
-            this.listBoxMacros = new System.Windows.Forms.ListBox();
+            this.listBoxMacro = new System.Windows.Forms.ListBox();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -55,6 +55,7 @@ namespace PEPCommander
             this.tableLayoutPanel1.SetRowSpan(this.listBoxCommands, 2);
             this.listBoxCommands.Size = new System.Drawing.Size(264, 352);
             this.listBoxCommands.TabIndex = 0;
+            this.listBoxCommands.SelectedIndexChanged += new System.EventHandler(this.WriteCommandDescription);
             // 
             // buttonAdd
             // 
@@ -66,6 +67,7 @@ namespace PEPCommander
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = ">>";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonRemove
             // 
@@ -77,6 +79,7 @@ namespace PEPCommander
             this.buttonRemove.TabIndex = 1;
             this.buttonRemove.Text = "<<";
             this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -93,7 +96,7 @@ namespace PEPCommander
             this.tableLayoutPanel1.Controls.Add(this.buttonRemove, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonRun, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonAdd, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.listBoxMacros, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listBoxMacro, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxDescription, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -133,6 +136,7 @@ namespace PEPCommander
             this.listBoxRequires.Name = "listBoxRequires";
             this.listBoxRequires.Size = new System.Drawing.Size(174, 328);
             this.listBoxRequires.TabIndex = 0;
+            this.listBoxRequires.SelectedIndexChanged += new System.EventHandler(this.WriteResourceDescription);
             // 
             // labelRequire
             // 
@@ -155,19 +159,21 @@ namespace PEPCommander
             this.buttonRun.TabIndex = 2;
             this.buttonRun.Text = "実行";
             this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
             // 
-            // listBoxMacros
+            // listBoxMacro
             // 
-            this.listBoxMacros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.listBoxMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxMacros.FormattingEnabled = true;
-            this.listBoxMacros.ItemHeight = 12;
-            this.listBoxMacros.Location = new System.Drawing.Point(323, 3);
-            this.listBoxMacros.Name = "listBoxMacros";
-            this.tableLayoutPanel1.SetRowSpan(this.listBoxMacros, 2);
-            this.listBoxMacros.Size = new System.Drawing.Size(264, 352);
-            this.listBoxMacros.TabIndex = 0;
+            this.listBoxMacro.FormattingEnabled = true;
+            this.listBoxMacro.ItemHeight = 12;
+            this.listBoxMacro.Location = new System.Drawing.Point(323, 3);
+            this.listBoxMacro.Name = "listBoxMacro";
+            this.tableLayoutPanel1.SetRowSpan(this.listBoxMacro, 2);
+            this.listBoxMacro.Size = new System.Drawing.Size(264, 352);
+            this.listBoxMacro.TabIndex = 0;
+            this.listBoxMacro.SelectedIndexChanged += new System.EventHandler(this.WriteCommandDescription);
             // 
             // textBoxDescription
             // 
@@ -209,7 +215,7 @@ namespace PEPCommander
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ListBox listBoxMacros;
+        private System.Windows.Forms.ListBox listBoxMacro;
         private System.Windows.Forms.TextBox textBoxDescription;
     }
 }
