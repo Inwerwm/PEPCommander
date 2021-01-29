@@ -9,7 +9,7 @@ namespace PEPCommander.Commands
 {
     class UVCLocalInvertHorizontal
     {
-        public int ID => 1;
+        public int ID => 2;
 
         public string Name => "UV局所鏡像反転";
 
