@@ -15,7 +15,7 @@ namespace PEPCommander.Commands
 
         public string Description => "選択頂点のUVを選択範囲の局所領域基準で鏡像反転する";
 
-        IEnumerable<IPXVertex> TargetVertices { get; set; }
+        public IEnumerable<IPXVertex> TargetVertices { get; set; }
 
         public IEnumerable<CommandResource> RequireResources => new CommandResource[] { CommandResource.Vertex };
 
@@ -42,6 +42,9 @@ namespace PEPCommander.Commands
             return Name;
         }
 
-        public object Clone() => new UVCLocalInvertVertical() { TargetVertices = this.TargetVertices };
+        public object Clone()
+        {
+            return new UVCLocalInvertHorizontal() { TargetVertices = this.TargetVertices };
+        }
     }
 }
