@@ -32,6 +32,5 @@ namespace UVCommand.Commands
         }
 
         public void UnDo() => Do();
-
     }
 }
