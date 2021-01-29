@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLauncher.cs" />
     <Compile Include="CommandManager.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\UVCLocalInvertHorizontal.cs" />
