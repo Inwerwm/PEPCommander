@@ -33,11 +33,11 @@ namespace PEPCommander
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listBoxMacros = new System.Windows.Forms.ListBox();
-            this.listBoxRequires = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.listBoxRequires = new System.Windows.Forms.ListBox();
             this.labelRequire = new System.Windows.Forms.Label();
             this.buttonRun = new System.Windows.Forms.Button();
+            this.listBoxMacros = new System.Windows.Forms.ListBox();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -87,7 +87,7 @@ namespace PEPCommander
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.tableLayoutPanel1.Controls.Add(this.listBoxCommands, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonRemove, 1, 1);
@@ -103,31 +103,6 @@ namespace PEPCommander
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 426);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // listBoxMacros
-            // 
-            this.listBoxMacros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxMacros.FormattingEnabled = true;
-            this.listBoxMacros.ItemHeight = 12;
-            this.listBoxMacros.Location = new System.Drawing.Point(323, 3);
-            this.listBoxMacros.Name = "listBoxMacros";
-            this.tableLayoutPanel1.SetRowSpan(this.listBoxMacros, 2);
-            this.listBoxMacros.Size = new System.Drawing.Size(264, 352);
-            this.listBoxMacros.TabIndex = 0;
-            // 
-            // listBoxRequires
-            // 
-            this.listBoxRequires.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxRequires.FormattingEnabled = true;
-            this.listBoxRequires.ItemHeight = 12;
-            this.listBoxRequires.Location = new System.Drawing.Point(3, 23);
-            this.listBoxRequires.Name = "listBoxRequires";
-            this.listBoxRequires.Size = new System.Drawing.Size(174, 328);
-            this.listBoxRequires.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -146,6 +121,18 @@ namespace PEPCommander
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(180, 354);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // listBoxRequires
+            // 
+            this.listBoxRequires.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxRequires.FormattingEnabled = true;
+            this.listBoxRequires.ItemHeight = 12;
+            this.listBoxRequires.Location = new System.Drawing.Point(3, 23);
+            this.listBoxRequires.Name = "listBoxRequires";
+            this.listBoxRequires.Size = new System.Drawing.Size(174, 328);
+            this.listBoxRequires.TabIndex = 0;
             // 
             // labelRequire
             // 
@@ -168,6 +155,19 @@ namespace PEPCommander
             this.buttonRun.TabIndex = 2;
             this.buttonRun.Text = "実行";
             this.buttonRun.UseVisualStyleBackColor = true;
+            // 
+            // listBoxMacros
+            // 
+            this.listBoxMacros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxMacros.FormattingEnabled = true;
+            this.listBoxMacros.ItemHeight = 12;
+            this.listBoxMacros.Location = new System.Drawing.Point(323, 3);
+            this.listBoxMacros.Name = "listBoxMacros";
+            this.tableLayoutPanel1.SetRowSpan(this.listBoxMacros, 2);
+            this.listBoxMacros.Size = new System.Drawing.Size(264, 352);
+            this.listBoxMacros.TabIndex = 0;
             // 
             // textBoxDescription
             // 
