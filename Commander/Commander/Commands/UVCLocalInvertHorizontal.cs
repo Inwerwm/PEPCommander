@@ -15,11 +15,11 @@ namespace PEPCommander.Commands
 
         public string Description => "選択頂点のUVを選択範囲の局所領域基準で鏡像反転する";
 
-        IEnumerable<IPXVertex> TargetVertices { get; }
+        IEnumerable<IPXVertex> TargetVertices { get; set; }
 
         public IEnumerable<CommandResource> RequireResources => new CommandResource[] { CommandResource.Vertex };
 
-        public UVCLocalInvertHorizontal(IEnumerable<IPXVertex> targetVertices)
+        public void Ready(IEnumerable<IPXVertex> targetVertices)
         {
             TargetVertices = targetVertices;
         }
