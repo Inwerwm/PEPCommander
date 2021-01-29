@@ -10,11 +10,13 @@ namespace PEPCommander.Commands
 {
     class UVCLocalInvertVertical : IUVCommand
     {
-        IEnumerable<IPXVertex> TargetVertices { get; }
+        public int ID => 1;
 
         public string Name => "UV局所垂直反転";
 
         public string Description => "選択頂点のUVを選択範囲の局所領域基準で垂直反転する";
+
+        IEnumerable<IPXVertex> TargetVertices { get; }
 
         public UVCLocalInvertVertical(IEnumerable<IPXVertex> targetVertices)
         {

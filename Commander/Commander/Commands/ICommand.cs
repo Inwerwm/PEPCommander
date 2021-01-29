@@ -8,6 +8,7 @@ namespace PEPCommander.Commands
 {
     public interface IUVCommand
     {
+        int ID { get; }
         /// <summary>
         /// コマンド名
         /// </summary>
