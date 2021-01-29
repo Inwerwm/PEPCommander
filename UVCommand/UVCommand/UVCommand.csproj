@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\IUVCommand.cs" />
+    <Compile Include="Commands\UVCLocalInvertHorizontal.cs" />
     <Compile Include="Commands\UVCLocalInvertVertical.cs" />
     <Compile Include="PluginMain.cs" />
     <Compile Include="FormControl.cs">

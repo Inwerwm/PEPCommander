@@ -10,19 +10,28 @@ namespace UVCommand.Commands
 {
     class UVCLocalInvertVertical : IUVCommand
     {
-        IEnumerable<IPXFace> TargetFaces { get; }
-        IEnumerable<VertexWithFace> TargetVertices { get; }
+        IEnumerable<IPXVertex> TargetVertices { get; }
 
-        public UVCLocalInvertVertical(IEnumerable<IPXFace> targetFaces)
+        public string Name => "局所垂直反転";
+
+        public string Description => "選択頂点のUVを選択範囲の局所領域基準で垂直反転する";
+
+        public UVCLocalInvertVertical(IEnumerable<IPXVertex> targetVertices)
         {
-            TargetFaces = targetFaces;
-
-            TargetVertices = TargetFaces.SelectMany(face => face.ToVertices().Select(vtx => new VertexWithFace(vtx, face)));
+            TargetVertices = targetVertices;
         }
 
         public void Do()
         {
+            float yAverage = TargetVertices.Average(vtx => vtx.UV.Y);
+            IEnumerable<(IPXVertex Vertex, float Difference)> diffs = TargetVertices.Select(vtx => (vtx, vtx.UV.Y - yAverage));
 
+            foreach (var item in diffs)
+            {
+                item.Vertex.UV.Y -= 2 * item.Difference;
+            }
         }
+
+        public void UnDo() => Do();
     }
 }
