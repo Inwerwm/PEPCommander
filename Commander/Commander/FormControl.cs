@@ -13,7 +13,6 @@ namespace PEPCommander
     public partial class FormControl : Form
     {
         IPERunArgs Args { get; }
-        IPXPmx Pmx { get; set; }
 
         public FormControl(IPERunArgs args)
         {
@@ -27,7 +26,6 @@ namespace PEPCommander
 
         internal void Reload()
         {
-            Pmx = Args.Host.Connector.Pmx.GetCurrentState();
         }
 
         private void WriteCommandDescription(object sender, EventArgs e)
