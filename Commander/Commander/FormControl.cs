@@ -30,12 +30,16 @@ namespace PEPCommander
 
         private void WriteCommandDescription(object sender, EventArgs e)
         {
-            textBoxDescription.Text = ((sender as ListBox).SelectedItem as ICommand).Description;
+            ICommand selectedCommand = ((sender as ListBox).SelectedItem as ICommand);
+            if (selectedCommand != null)
+                textBoxDescription.Text = selectedCommand.Description;
         }
 
         private void WriteResourceDescription(object sender, EventArgs e)
         {
-            textBoxDescription.Text = CommandResourceInfo.Descriptions[(CommandResource)(sender as ListBox).SelectedItem];
+            object selectedItem = (sender as ListBox).SelectedItem;
+            if (selectedItem != null)
+                textBoxDescription.Text = CommandResourceInfo.Descriptions[(CommandResource)selectedItem];
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -53,9 +57,11 @@ namespace PEPCommander
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            var selectedItem = (ICommand)listBoxMacro.SelectedItem;
-            if (selectedItem != null)
-                listBoxMacro.Items.Remove(selectedItem);
+            var selectedCommand = (ICommand)listBoxMacro.SelectedItem;
+            if (selectedCommand == null)
+                return;
+
+            listBoxMacro.Items.Remove(selectedCommand);
 
             // コマンドが空になったら要求要素リストを全削除する
             if (listBoxMacro.Items.Count < 1)
@@ -65,7 +71,7 @@ namespace PEPCommander
             }
 
             // 削除したコマンドの要求要素を残ったコマンドが要求していないなら要求要素リストから削除する
-            foreach (var resource in selectedItem.RequireResources.Where(resource => !listBoxMacro.Items.Cast<ICommand>().Any(cmd => cmd.RequireResources.Contains(resource))))
+            foreach (var resource in selectedCommand.RequireResources.Where(resource => !listBoxMacro.Items.Cast<ICommand>().Any(cmd => cmd.RequireResources.Contains(resource))))
             {
                 listBoxRequires.Items.Remove(resource);
             }
@@ -78,9 +84,9 @@ namespace PEPCommander
                 var launch = new CommandLauncher(Args);
                 launch.Launch(listBoxMacro.Items.Cast<ICommand>());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Utility.ShowExceptionMessage(ex);
             }
         }
     }
