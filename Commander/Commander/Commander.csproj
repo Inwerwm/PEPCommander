@@ -52,6 +52,7 @@
     <Compile Include="CommandLauncher.cs" />
     <Compile Include="CommandManager.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Requires\IRequireVertices.cs" />
     <Compile Include="Commands\UVCLocalInvertHorizontal.cs" />
     <Compile Include="Commands\UVCLocalInvertVertical.cs" />
     <Compile Include="PluginMain.cs" />
@@ -61,7 +62,7 @@
     <Compile Include="FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommandResource.cs" />
+    <Compile Include="Requires\CommandResource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

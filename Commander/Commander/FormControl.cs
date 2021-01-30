@@ -1,15 +1,11 @@
 ﻿using PEPCommander.Commands;
+using PEPCommander.Requires;
 using PEPExtensions;
 using PEPlugin;
 using PEPlugin.Pmx;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PEPCommander
@@ -63,7 +59,7 @@ namespace PEPCommander
                 listBoxMacro.Items.Remove(selectedItem);
 
             // コマンドが空になったら要求要素リストを全削除する
-            if(listBoxMacro.Items.Count < 1)
+            if (listBoxMacro.Items.Count < 1)
             {
                 listBoxRequires.Items.Clear();
                 return;
@@ -78,7 +74,15 @@ namespace PEPCommander
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                var launch = new CommandLauncher(Args);
+                launch.Launch(listBoxMacro.Items.Cast<ICommand>());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
