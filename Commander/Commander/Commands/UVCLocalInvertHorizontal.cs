@@ -1,4 +1,5 @@
-﻿using PEPlugin.Pmx;
+﻿using PEPCommander.Requires;
+using PEPlugin.Pmx;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Commands
 {
-    class UVCLocalInvertHorizontal : ICommand
+    class UVCLocalInvertHorizontal : ICommand, IRequireVertices
     {
         public int ID => 2;
 
@@ -19,9 +20,9 @@ namespace PEPCommander.Commands
 
         public IEnumerable<CommandResource> RequireResources => new CommandResource[] { CommandResource.Vertex };
 
-        public void Ready(IEnumerable<IPXVertex> targetVertices)
+        public void Supply(IEnumerable<IPXVertex> vertices)
         {
-            TargetVertices = targetVertices;
+            TargetVertices = vertices;
         }
 
         public void Do()
