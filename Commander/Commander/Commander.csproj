@@ -7,8 +7,8 @@
     <ProjectGuid>{0DBA0D35-A3DB-4A2E-A56F-C84239092E24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UVCommand</RootNamespace>
-    <AssemblyName>UVCommand</AssemblyName>
+    <RootNamespace>Commander</RootNamespace>
+    <AssemblyName>Commander</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
