@@ -35,20 +35,20 @@ namespace PEPCommander.Commands
 
         public void Do()
         {
-            foreach (var item in Bones.Select((bone, i) => (bone, i)))
+            foreach (var bone in Bones)
             {
-                item.bone.Name += "R";
-                item.bone.NameE += "R";
+                IPXBone createdBone = bone.Clone() as IPXBone;
 
-                IPXBone createdBone = item.bone.Clone() as IPXBone;
+                bone.Name += "R";
+                bone.NameE += "R";
 
-                item.bone.AppendParent = createdBone;
-                item.bone.AppendRatio = 1;
-                item.bone.IsAppendLocal = false;
-                item.bone.IsAppendRotation = true;
-                item.bone.IsAppendTranslation = true;
+                bone.AppendParent = createdBone;
+                bone.AppendRatio = 1;
+                bone.IsAppendLocal = false;
+                bone.IsAppendRotation = true;
+                bone.IsAppendTranslation = true;
 
-                Pmx.Bone.Insert(item.i, createdBone);
+                Pmx.Bone.Insert(Pmx.Bone.IndexOf(bone), createdBone);
             }
         }
 
