@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Requires
 {
-    interface IRequireVertices
+    interface IRequireBones
     {
-        void Supply(IEnumerable<IPXVertex> vertices);
+        void Supply(IEnumerable<IPXBone> Bones);
     }
 }

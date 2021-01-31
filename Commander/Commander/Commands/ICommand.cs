@@ -26,9 +26,5 @@ namespace PEPCommander.Commands
         /// 実行
         /// </summary>
         void Do();
-        /// <summary>
-        /// もとに戻す
-        /// </summary>
-        void UnDo();
     }
 }

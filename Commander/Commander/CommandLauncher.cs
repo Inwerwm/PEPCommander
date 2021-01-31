@@ -45,13 +45,23 @@ namespace PEPCommander
             {
                 switch (rsc)
                 {
+                    case CommandResource.Pmx:
+                        (command as IRequirePmx).Supply(Pmx);
+                        command.Do();
+                        break;
                     case CommandResource.Vertex:
-                        int[] selectedVertexIndices = Args.Host.Connector.View.PmxView.GetSelectedVertexIndices();
-                        if (selectedVertexIndices.Length < 1)
-                            throw new InvalidOperationException("頂点が選択されている必要があります。");
+                        var selectedVertex = Args.Host.Connector.View.PmxView.GetSelectedVertexIndices().Select(i => Pmx.Vertex[i]);
+                        if (!selectedVertex.Any())
+                            throw new InvalidOperationException("ビュー画面で頂点が選択されている必要があります。");
 
-                        var cmdV = command as IRequireVertices;
-                        cmdV.Supply(selectedVertexIndices.Select(i => Pmx.Vertex[i]));
+                        (command as IRequireVertices).Supply(selectedVertex);
+                        break;
+                    case CommandResource.Bone:
+                        var selectedBones = Args.Host.Connector.View.PmxView.GetSelectedBoneIndices().Select(i => Pmx.Bone[i]);
+                        if(!selectedBones.Any())
+                            throw new InvalidOperationException("ビュー画面でボーンが選択されている必要があります。");
+
+                        (command as IRequireBones).Supply(selectedBones);
                         break;
                     default:
                         break;

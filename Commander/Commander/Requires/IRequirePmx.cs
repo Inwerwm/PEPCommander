@@ -1,5 +1,4 @@
-﻿using PEPCommander.Commands;
-using PEPlugin.Pmx;
+﻿using PEPlugin.Pmx;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace PEPCommander.Requires
 {
-    interface IRequireVertices
+    interface IRequirePmx
     {
-        void Supply(IEnumerable<IPXVertex> vertices);
+        void Supply(IPXPmx pmx);
     }
 }

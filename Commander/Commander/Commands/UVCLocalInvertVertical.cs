@@ -37,8 +37,6 @@ namespace PEPCommander.Commands
             }
         }
 
-        public void UnDo() => Do();
-
         public override string ToString()
         {
             return Name;

@@ -12,7 +12,8 @@ namespace PEPCommander
         public static IReadOnlyList<ICommand> List => new ICommand[]
         {
             new UVCLocalInvertVertical(),
-            new UVCLocalInvertHorizontal()
+            new UVCLocalInvertHorizontal(),
+            new CreateWrapperBone(),
         };
     }
 }
