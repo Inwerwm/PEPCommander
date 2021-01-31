@@ -47,7 +47,6 @@ namespace PEPCommander
                 {
                     case CommandResource.Pmx:
                         (command as IRequirePmx).Supply(Pmx);
-                        command.Do();
                         break;
                     case CommandResource.Vertex:
                         var selectedVertex = Args.Host.Connector.View.PmxView.GetSelectedVertexIndices().Select(i => Pmx.Vertex[i]).ToList();
